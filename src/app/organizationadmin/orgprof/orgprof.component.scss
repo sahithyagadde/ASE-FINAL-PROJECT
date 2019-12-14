@@ -1,0 +1,167 @@
+
+:host {
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+}
+.nav-brand {
+  width: 215px;
+  text-align: center;
+}
+.topnav-icon {
+  text-decoration: none;
+  display: flex;
+  color: #fff;
+}
+
+.nav-spacer {
+  flex: 1 1 auto;
+}
+
+.visible-md {
+  display: none;
+}
+.visible-sm {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .visible-md {
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .visible-sm {
+    display: block;
+  }
+  .nav-brand {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hidden-sm {
+    display: none;
+  }
+}
+/* Style the links inside the sidenav */
+
+
+/* The about link: 20px from the top with a green background */
+
+
+@media screen and (max-width: 992px) {
+  #sidebar {
+    left: -250px;
+  }
+}
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 290px;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+}
+.topnav-icon {
+  text-decoration: none;
+  display: flex;
+  color: #fff;
+}
+
+.sidenav-icon {
+  text-decoration: none;
+  left: -30px;
+  padding: 0px 50px;
+}
+
+.nav-spacer {
+  flex: 1 1 auto;
+}
+.bg-image{
+  width: 1025px;
+  height: 300px;
+  alignment: right;
+
+
+}
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+
+  .container-fluid {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .OrgForm {
+      padding: 40px;
+
+
+    }
+  }
+  .example-form {
+    min-width: 1000px;
+    max-width: 10000px;
+    width: 100%;
+  }
+
+  .example-full-width {
+    width: 400px;
+  }
+
+  .example-full-width:nth-last-child {
+    margin-bottom: 10px;
+  }
+
+  .button-row {
+    margin: 10px 0;
+
+  }
+
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+  overflow: auto;
+  padding-left: auto;
+  margin: 10px 0;
+
+}
+
+.isbn-col {
+  flex: 0 0 100px !important;
+  white-space: unset !important;
+}
+
+.button-row {
+  margin: 10px 0;
+}
+table {
+  width: 100%;
+  padding-left: 10px;
+
+
+}
+.mat-table {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+  0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+}
+.mat-header-cell{
+  padding-left: 0px;
+  text-align: center;
+}
+.mb-20 {
+  margin-bottom: 20px;
+
+}
+

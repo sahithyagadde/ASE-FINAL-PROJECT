@@ -1,0 +1,94 @@
+.example-form {
+  min-width: 150px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-full-width:nth-last-child {
+  margin-bottom: 10px;
+}
+
+.button-row {
+  margin: 10px 0;
+}
+
+.topnav-icon {
+  text-decoration: none;
+  display: flex;
+  color: #fff;
+}
+
+.nav-spacer {
+  flex: 1 1 auto;
+}
+
+.visible-md {
+  display: none;
+}
+.visible-sm {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .visible-md {
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .visible-sm {
+    display: block;
+  }
+  .nav-brand {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hidden-sm {
+    display: none;
+  }
+}
+/* Style the links inside the sidenav */
+
+
+/* The about link: 20px from the top with a green background */
+
+
+@media screen and (max-width: 992px) {
+  #sidebar {
+    left: -250px;
+  }
+}
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 290px;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+}
+.topnav-icon {
+  text-decoration: none;
+  display: flex;
+  color: #fff;
+}
+
+.sidenav-icon {
+  text-decoration: none;
+  left: -30px;
+  padding: 0px 50px;
+}
+
+.nav-spacer {
+  flex: 1 1 auto;
+}
+.bg-image{
+  width: 1075px;
+  height: 300px;
+  alignment: right;
+
+
+}
+

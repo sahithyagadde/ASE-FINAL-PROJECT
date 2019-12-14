@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="ie9 no-focus" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-focus" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>Organization Admin Dashboard</title>
+  <script type="text/javascript" src="jquery-min.js" ></script>
+  <meta name="description" content="OneUI - Admin Dashboard Template &amp; UI Framework created by pixelcave and published on Themeforest">
+  <meta name="author" content="pixelcave">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+
+  <!-- Icons -->
+  <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+  <link rel="shortcut icon" href="../../assets/img/favicons/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="../../assets/img/favicons/favicon-192x192.png" sizes="192x192">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="../../assets/img/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../../assets/img/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../../assets/img/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../../assets/img/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../../assets/img/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../../assets/img/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../../assets/img/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicons/apple-touch-icon-180x180.png">
+  <!-- END Icons -->
+
+  <!-- Stylesheets -->
+  <!-- Web fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+
+  <!-- Bootstrap and OneUI CSS framework -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" id="css-main" href="../../assets/css/oneui.css">
+
+  <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+  <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
+  <!-- END Stylesheets -->
+</head>
+<body>
+<!-- Page Container -->
+<!--
+    Available Classes:
+
+    'enable-cookies'             Remembers active color theme between pages (when set through color theme list)
+
+    'sidebar-l'                  Left Sidebar and right Side Overlay
+    'sidebar-r'                  Right Sidebar and left Side Overlay
+    'sidebar-mini'               Mini hoverable Sidebar (> 991px)
+    'sidebar-o'                  Visible Sidebar by default (> 991px)
+    'sidebar-o-xs'               Visible Sidebar by default (< 992px)
+
+    'side-overlay-hover'         Hoverable Side Overlay (> 991px)
+    'side-overlay-o'             Visible Side Overlay by default (> 991px)
+
+    'side-scroll'                Enables custom scrolling on Sidebar and Side Overlay instead of native scrolling (> 991px)
+
+    'header-navbar-fixed'        Enables fixed header
+-->
+<div id="page-container" >
+  <!-- Header -->
+  <mat-toolbar color="primary" class="fix-nav">
+    <button type="button" mat-icon-button class="visible-md" (click)="toggleSidebar()">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <div class="nav-brand">
+      Organization Admin
+    </div>
+    <span class="nav-spacer"></span>
+    <a  class="hidden-sm" mat-raised-button style="margin-right: 10px">
+      <button type="button" mat-icon-button class="visible-md" (click)="toggleSidebar()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <button mat-icon-button [routerLink]="['/organizationadmin']">
+        <mat-icon>home</mat-icon>
+      </button>
+      <button class="hidden-sm" mat-icon-button [matMenuTriggerFor]="profile">
+        <mat-icon>list</mat-icon>
+      </button>
+      <mat-menu #profile="matMenu">
+        <button mat-menu-item [routerLink]="['/userprofile']">
+          <mat-icon>person</mat-icon>
+          <span>{{ 'Profile'  }}</span>
+        </button>
+
+        <button mat-menu-item (click)="logOut()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>{{ 'Log Out' }}</span>
+        </button>
+      </mat-menu>
+
+
+    </a>
+  </mat-toolbar>
+  <!-- END Header -->
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="isHandset ? 'dialog' : 'navigation'" [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
+                 [opened]="!(isHandset | async)!.matches">
+      <mat-toolbar color="primary"> AI Chat Based Survey System </mat-toolbar>
+
+
+      <mat-nav-list>
+        <a mat-list-item [routerLinkActive]="'active'" >
+          <mat-icon class="sidenav-icon" [matMenuTriggerFor]="ques"> question_answer</mat-icon>  Question Sets
+        </a>
+
+        <mat-menu #ques="matMenu">
+          <button mat-menu-item [routerLink]="['/organizationadminquest']">
+            <mat-icon>zoom_in</mat-icon>
+            <span>{{ 'View Question Sets' }}</span>
+          </button>
+          <button mat-menu-item [routerLink]="['/orgquessetadd']">
+            <mat-icon>add</mat-icon>
+            <span>{{ 'Add Question Sets'  }}</span>
+          </button>
+
+
+        </mat-menu>
+
+
+        <a mat-list-item [routerLinkActive]="'active'" >
+          <mat-icon class="sidenav-icon" [matMenuTriggerFor]="prof">people</mat-icon>   Professors
+        </a>
+        <mat-menu #prof="matMenu">
+          <button mat-menu-item [routerLink]="['/orgprof']">
+            <mat-icon>zoom_in</mat-icon>
+            <span>{{ 'View Professors' }}</span>
+          </button>
+          <button mat-menu-item [routerLink]="['/orgprofadd']">
+            <mat-icon>add</mat-icon>
+            <span>{{ 'Add Professors'  }}</span>
+          </button>
+
+
+        </mat-menu>
+
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <!-- Main Container -->
+    <mat-sidenav-content>
+
+  <!-- Main Container -->
+  <main id="main-container">
+    <!-- Page Content -->
+    <div class="content content-boxed">
+      <!-- Page Header -->
+      <div class="bg-image overflow-hidden push" style="background-image: url('../../../assets/img/photos/photo36@2x.jpg');">
+        <div class="bg-black-op">
+          <div class="content content-full text-center">
+            <h1 class="h1 font-w700 text-white animated fadeInDown push-50-t push-5">Organization Admin of {{loggedUser1}}</h1>
+            <h2 class="h3 font-w600 text-white-op animated fadeInDown">Details of the Professors in the Organization </h2>
+          </div>
+        </div>
+      </div>
+      <!-- END Page Header -->
+
+      <!-- Stats -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="block block-rounded block-opt-refresh-icon8">
+
+              <div class="example-container mat-elevation-z8">
+                <table mat-table #table [dataSource]="dataSource">
+
+                  <!--- Note that these columns can be defined in any order.
+                        The actual rendered columns are set as a property on the row definition" -->
+
+                  <!-- Title Column -->
+                  <ng-container matColumnDef="profId">
+                    <th mat-header-cell *matHeaderCellDef> Professor ID </th>
+                    <td mat-cell *matCellDef="let element" class="isbn-col"> {{element.profId}} </td>
+                  </ng-container>
+
+                  <!-- Title Column -->
+                  <ng-container matColumnDef="profName">
+                    <th mat-header-cell *matHeaderCellDef> Professor Name</th>
+                    <td mat-cell *matCellDef="let element"> {{element.profName}} </td>
+                  </ng-container>
+
+                  <!-- Author Column -->
+                  <ng-container matColumnDef="profMail">
+                    <th mat-header-cell *matHeaderCellDef> Professor Mail</th>
+                    <td mat-cell *matCellDef="let element"> {{element.profMail}} </td>
+                  </ng-container>
+
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/orgprofview', row._id]"></tr>
+                </table>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+</body>
+</html>
