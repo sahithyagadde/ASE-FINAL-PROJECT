@@ -11,7 +11,7 @@
   "dependencies": {
     "@angular/cdk": "^8.2.3",
     "@angular/material": "^8.2.3",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "connect": "^3.7.0",
     "cors": "^2.8.5",
